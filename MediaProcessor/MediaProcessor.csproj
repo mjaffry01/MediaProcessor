@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<RootNamespace>MediaTimelineEditor</RootNamespace>
+		<AssemblyName>MediaTimelineEditor</AssemblyName>
+		<ApplicationIcon />
+		<ApplicationManifest />
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Add this if using compatibility packages -->
+		<PackageReference Include="Microsoft.Windows.Compatibility" Version="5.0.2" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<!-- Manually include these files if needed -->
+	<ItemGroup>
+		<Compile Include="App.xaml.cs" />
+		<Compile Include="MainWindow.xaml.cs" />
+		<Compile Include="MediaItem.cs" />
+		<Compile Include="MediaItemControl.xaml.cs" />
+		<Compile Include="MediaProcessor.cs" />
+		<Page Include="MainWindow.xaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="MediaItemControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+	</ItemGroup>
+
+</Project>
